@@ -1,13 +1,18 @@
-import React from 'react';
+import React from "react";
 
-function SignUp() {
+function Register() {
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-100">
       <form className="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
         <h2 className="text-2xl font-bold mb-6 text-center">Sign Up</h2>
 
         <div className="mb-4">
-          <label htmlFor="name" className="block text-gray-700 font-medium mb-2">Name</label>
+          <label
+            htmlFor="name"
+            className="block text-gray-700 font-medium mb-2"
+          >
+            Name
+          </label>
           <input
             type="text"
             id="name"
@@ -16,7 +21,12 @@ function SignUp() {
         </div>
 
         <div className="mb-4">
-          <label htmlFor="email" className="block text-gray-700 font-medium mb-2">Email</label>
+          <label
+            htmlFor="email"
+            className="block text-gray-700 font-medium mb-2"
+          >
+            Email
+          </label>
           <input
             type="email"
             id="email"
@@ -25,7 +35,12 @@ function SignUp() {
         </div>
 
         <div className="mb-4">
-          <label htmlFor="password" className="block text-gray-700 font-medium mb-2">Password</label>
+          <label
+            htmlFor="password"
+            className="block text-gray-700 font-medium mb-2"
+          >
+            Password
+          </label>
           <input
             type="password"
             id="password"
@@ -34,7 +49,12 @@ function SignUp() {
         </div>
 
         <div className="mb-6">
-          <label htmlFor="repeatPassword" className="block text-gray-700 font-medium mb-2">Repeat Password</label>
+          <label
+            htmlFor="repeatPassword"
+            className="block text-gray-700 font-medium mb-2"
+          >
+            Repeat Password
+          </label>
           <input
             type="password"
             id="repeatPassword"
@@ -53,4 +73,4 @@ function SignUp() {
   );
 }
 
-export default SignUp;
+export default Register;
