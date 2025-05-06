@@ -1,13 +1,22 @@
 import React from "react";
 
 function Login() {
+  const loginUser = (e) => {
+    e.preventDefault();
+  };
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-100">
-      <form className="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
+      <form
+        onSubmit={loginUser}
+        className="bg-white p-8 rounded-lg shadow-md w-full max-w-md"
+      >
         <h2 className="text-2xl font-bold mb-6 text-center">Login</h2>
-        
+
         <div className="mb-4">
-          <label htmlFor="email" className="block text-gray-700 font-medium mb-2">
+          <label
+            htmlFor="email"
+            className="block text-gray-700 font-medium mb-2"
+          >
             Email
           </label>
           <input
@@ -19,7 +28,10 @@ function Login() {
         </div>
 
         <div className="mb-6">
-          <label htmlFor="password" className="block text-gray-700 font-medium mb-2">
+          <label
+            htmlFor="password"
+            className="block text-gray-700 font-medium mb-2"
+          >
             Password
           </label>
           <input
