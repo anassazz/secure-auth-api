@@ -1,9 +1,18 @@
 import React from "react";
 
 function Register() {
+
+  const registerUser = (e)=>{
+    e.preventDefault()
+
+  }
+
+
+
+
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-100">
-      <form className="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
+      <form onSubmit={registerUser} className="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
         <h2 className="text-2xl font-bold mb-6 text-center">Sign Up</h2>
 
         <div className="mb-4">
