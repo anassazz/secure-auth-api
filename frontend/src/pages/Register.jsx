@@ -1,18 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 
 function Register() {
+  const [data, setData] = useState({
+    name: "",
+    email: "",
+    password: "",
+  });
 
-  const registerUser = (e)=>{
-    e.preventDefault()
-
-  }
-
-
-
+  const registerUser = (e) => {
+    e.preventDefault();
+  };
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-100">
-      <form onSubmit={registerUser} className="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
+      <form
+        onSubmit={registerUser}
+        className="bg-white p-8 rounded-lg shadow-md w-full max-w-md"
+      >
         <h2 className="text-2xl font-bold mb-6 text-center">Sign Up</h2>
 
         <div className="mb-4">
@@ -25,6 +29,8 @@ function Register() {
           <input
             type="text"
             id="name"
+            value={data.name}
+            onChange={(e) => setData({ ...data, name: e.target.value })}
             className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
           />
         </div>
@@ -39,6 +45,8 @@ function Register() {
           <input
             type="email"
             id="email"
+            value={data.email}
+            onChange={(e) => setData({ ...data, email: e.target.value })}
             className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
           />
         </div>
@@ -53,20 +61,8 @@ function Register() {
           <input
             type="password"
             id="password"
-            className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
-          />
-        </div>
-
-        <div className="mb-6">
-          <label
-            htmlFor="repeatPassword"
-            className="block text-gray-700 font-medium mb-2"
-          >
-            Repeat Password
-          </label>
-          <input
-            type="password"
-            id="repeatPassword"
+            value={data.password}
+            onChange={(e) => setData({ ...data, password: e.target.value })}
             className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
           />
         </div>
