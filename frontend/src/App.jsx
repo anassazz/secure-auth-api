@@ -1,13 +1,12 @@
-
-import './App.css'
+import SignUp from "./pages/SignUp";
+import './index.css'
 
 function App() {
+  return <div>
+   
+   <SignUp/>
 
-  return (
-    <>
-     
-    </>
-  )
+  </div>;
 }
 
-export default App
+export default App;
