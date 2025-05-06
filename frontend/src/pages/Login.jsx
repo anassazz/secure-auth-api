@@ -1,6 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 
 function Login() {
+
+    const [data,setData]=useState({
+        email:'',
+        password:'',
+    })
+
+
   const loginUser = (e) => {
     e.preventDefault();
   };
@@ -22,8 +29,10 @@ function Login() {
           <input
             type="email"
             id="email"
+            value={data.email}
             className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-400"
             placeholder="Enter your email"
+            onChange={(e)=>setData({...data,email: e.target.value})}
           />
         </div>
 
@@ -37,8 +46,10 @@ function Login() {
           <input
             type="password"
             id="password"
+            value={data.password}
             className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-400"
             placeholder="Enter your password"
+            onChange={(e)=>setData({...data,password: e.target.value})}
           />
         </div>
 
