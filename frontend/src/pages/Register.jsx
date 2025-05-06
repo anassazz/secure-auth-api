@@ -29,6 +29,7 @@ function Register() {
           <input
             type="text"
             id="name"
+            placeholder="Enter your name"
             value={data.name}
             onChange={(e) => setData({ ...data, name: e.target.value })}
             className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
@@ -45,6 +46,7 @@ function Register() {
           <input
             type="email"
             id="email"
+            placeholder="Enter your email"
             value={data.email}
             onChange={(e) => setData({ ...data, email: e.target.value })}
             className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
@@ -61,6 +63,7 @@ function Register() {
           <input
             type="password"
             id="password"
+            placeholder="Enter your password"
             value={data.password}
             onChange={(e) => setData({ ...data, password: e.target.value })}
             className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
