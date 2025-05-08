@@ -5,6 +5,8 @@ export const test = (req, res) => {
   res.json("test is working");
 };
 
+
+// Register user endpoint
 export const registerUser = async (req, res) => {
   try {
     const { name, email, password } = req.body;
@@ -42,3 +44,9 @@ export const registerUser = async (req, res) => {
 
   }
 };
+
+// Login user endpoint
+
+export const loginUser = async (req, res) => {
+    
+}
