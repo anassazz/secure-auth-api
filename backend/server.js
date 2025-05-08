@@ -9,7 +9,9 @@ const app = express()
 
 const PORT = process.env.PORT || 5000
 
+//Middleware
 app.use(express.json())
+
 app.use('/',authRoutes)
 
 //connecting to MongoDB
