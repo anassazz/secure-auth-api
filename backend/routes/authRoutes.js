@@ -2,6 +2,7 @@ import express from 'express'
 import cors from 'cors'
 const router =express.Router()
 import { test } from '../controllers/authController.js'
+import { registerUser } from '../controllers/authController.js'
 
 
 //Middleware
@@ -11,6 +12,7 @@ router.use(cors({
 }))
 
 router.get('/',test)
+router.post('/register',registerUser)
 
 
 export default router

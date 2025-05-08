@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 5000
 
 app.use('/',authRoutes)
 
-
+//connecting to MongoDB
 mongoose.connect(process.env.MONGO_URL)
 .then(()=>console.log(' ✅ MongoDB Connected'))
 .catch((err)=>console.log("Database not connected",err)) 
