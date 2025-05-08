@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 
 function Login() {
 
@@ -10,6 +11,7 @@ function Login() {
 
   const loginUser = (e) => {
     e.preventDefault();
+    axios.get('/')
   };
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-100">
