@@ -52,6 +52,7 @@ export const loginUser = async (req, res) => {
         const {email,password} = req.body
         //check if email and password are entered
         const user = await User.findOne({email});
+        
         if(!user) {
             return res.json({error:"User not found"})
         }
@@ -59,6 +60,9 @@ export const loginUser = async (req, res) => {
         const match = await comparePassword(password,user.password)
         if(match) {
             return res.json({message:"Login successful",user})
+        }
+        if(!match) {
+            return res.json({error:"Invalid credentials"})
         }
         
     } catch (error) {
