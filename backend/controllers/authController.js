@@ -48,5 +48,21 @@ export const registerUser = async (req, res) => {
 // Login user endpoint
 
 export const loginUser = async (req, res) => {
-    
+    try {
+        const {email,password} = req.body
+        //check if email and password are entered
+        const user = await User.findOne({email});
+        if(!user) {
+            return res.json({error:"User not found"})
+        }
+        //check if password is correct
+        const match = await comparePassword(password,user.password)
+        if(match) {
+            return res.json({message:"Login successful",user})
+        }
+        
+    } catch (error) {
+        console.log(error)
+    }
+
 }

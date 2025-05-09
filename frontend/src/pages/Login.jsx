@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import axios from "axios";
+import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
+  const navigate = useNavigate();
 
     const [data,setData]=useState({
         email:'',
@@ -9,9 +12,22 @@ function Login() {
     })
 
 
-  const loginUser = (e) => {
+  const loginUser = async (e) => {
     e.preventDefault();
-    axios.get('/')
+    const { email, password } = data;
+    try {
+      const {data}= await axios.post('/login',{ email, password });
+      if(data.error){
+        toast.error(data.error);
+      }else{
+        setData({});
+        navigate('/');
+        toast.success(data.message);
+
+      }
+    } catch (error) {
+      console.log(error);
+    }
   };
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-100">
