@@ -2,7 +2,7 @@ import express from 'express'
 import cors from 'cors'
 const router =express.Router()
 import { test } from '../controllers/authController.js'
-import { registerUser,loginUser } from '../controllers/authController.js'
+import { registerUser,loginUser,getProfile } from '../controllers/authController.js'
 
 
 //Middleware
@@ -14,6 +14,7 @@ router.use(cors({
 router.get('/',test)
 router.post('/register',registerUser)
 router.post('/login',loginUser)
+router.get('/profile',getProfile)
 
 
 export default router
