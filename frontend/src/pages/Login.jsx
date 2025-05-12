@@ -21,7 +21,7 @@ function Login() {
         toast.error(data.error);
       }else{
         setData({});
-        navigate('/');
+        navigate('/dashboard');
         toast.success(data.message);
 
       }
