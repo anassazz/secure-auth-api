@@ -1,4 +1,5 @@
 import User from "../models/user.js";
+import jwt from 'jsonwebtoken'
 import { hashPassword,comparePassword } from "../helpers/auth.js";
 
 export const test = (req, res) => {
@@ -59,7 +60,10 @@ export const loginUser = async (req, res) => {
         //check if password is correct
         const match = await comparePassword(password,user.password)
         if(match) {
-            return res.json({message:"Login successful",user})
+            jwt.sign({email: user.email, id: user._id, name: user.name}, process.env.JWT_SECRET,{},(err,token)=>{
+              if(err)throw err;
+              res.cookie('token',token).json(user)
+            })
         }
         if(!match) {
             return res.json({error:"Invalid credentials"})
